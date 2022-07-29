@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using onlineMoviesTickets.Data;
+using onlineMoviesTickets.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddTransient<ActorService>();
+builder.Services.AddTransient<ProducerService>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<MyDbContext>(options =>
